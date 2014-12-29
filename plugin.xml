@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="PluginDemo" version="0.0.1" 
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Plugin Demo</name>
+    <description>First Demo Description</description>
+    <engines>
+        <engine name="cordova" version=">3.0.0" />
+    </engines>
+    <js-module name="DemoPlugin" src="www/js/PluginDemo.js">
+        <clobbers target="prjplugin"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="PrjPluginName">
+                <param name="android-package" value="com.baozhe.cordova.PrjPlugin"/>
+            </feature>
+        </config-file>
+	
+	<lib-file src="libs/android/commons-codec-1.5.jar" />
+	
+        <source-file src="src/android/cordova/plugins/PrjPlugin.java" target-dir="src/com/baozhe/cordova"/>
+
+    </platform>
+</plugin>
